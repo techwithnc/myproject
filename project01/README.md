@@ -7,10 +7,10 @@ This is a sample project that run in kubernetes cluster.
 
 ## What type of kubernetes resources used in this project?
 In this project , I've just used four type of kubernetes resources.They are ...
-    - Deployment
-    - Namespace
-    - ReplicaSet
-    - Pod.
+- Deployment
+- Namespace
+- ReplicaSet
+- Pod.
 
 ## Explain a little bit about of this project.
  OK , there are two kubernetes namespaces. One is test and another is dev.In each namespace there is one deployment that create three pods.
