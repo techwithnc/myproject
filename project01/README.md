@@ -26,6 +26,15 @@ There are two kubernetes namespaces. One is test and another is dev.In each name
 (3) Create deployment for website that running sample website.
 - kubectl apply -f deployment-dev.yaml
 
+You can confirm with the following commands.
+- kubectl get ns
+- kubectl get deploy -n dev
+- kubectl get deploy -n test
+- kubectl describe deploy myapp -n dev
+- kubectl describe deploy myapp -n test
+- kubectl get pod -n dev
+- kubectl get pod -n test
+
 ## What is the name of the docker image that used?
 I've just used my custom docker image that build from nginx docke file.These are techwithnc/sampleweb:1.0 and techwithnc/sampleweb:2.0.
 
