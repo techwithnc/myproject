@@ -1,6 +1,6 @@
 # Project-01
 
-![pj01](https://user-images.githubusercontent.com/120474799/216073576-96a6633d-9651-4510-bfa4-0ccf9958320d.png)
+![pj01](https://user-images.githubusercontent.com/120474799/216083959-19adf29b-c032-40df-903a-b1cf80308de1.png)
 
 ## What is this?
 This is a sample project that run in kubernetes cluster.
