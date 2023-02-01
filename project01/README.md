@@ -39,4 +39,4 @@ You can confirm with the following commands.
 I've just used my custom docker image that build from nginx docke file.These are techwithnc/sampleweb:1.0 and techwithnc/sampleweb:2.0.
 
 ## I don't have my own kubernetes cluster.How do I test this project?
-You can test your kubenetes project from the following link. https://killercoda.com/playgrounds/scenario/kubernetes
+You can test your kubenetes project from the following link. https://killercoda.com/playgrounds/scenario/kubernetes . You will get 2 nodes and 1hr time. Each node have 1 core CPU and 2G memory.
