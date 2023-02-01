@@ -3,7 +3,7 @@
 ![pj01](https://user-images.githubusercontent.com/120474799/216083959-19adf29b-c032-40df-903a-b1cf80308de1.png)
 
 ## What is this?
-This is a sample project that run in kubernetes cluster.
+This is a sample project that deploy sample website in kubernetes cluster.
 
 ## What type of kubernetes resources used in this project?
 In this project , I've just used four type of kubernetes resources.They are ...
@@ -38,3 +38,5 @@ You can confirm with the following commands.
 ## What is the name of the docker image that used?
 I've just used my custom docker image that build from nginx docke file.These are techwithnc/sampleweb:1.0 and techwithnc/sampleweb:2.0.
 
+## I don't have my own kubernetes cluster.How do I test this project?
+You can test your kubenetes project from the following link. https://killercoda.com/playgrounds/scenario/kubernetes
