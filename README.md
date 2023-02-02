@@ -1,5 +1,5 @@
-# Repo for my projects
+# Repo for my all projects
 
-I will add all my projects that I was tested/deployed/writed on my learning journey to this repo.
+In this repository I will upload my projects on DevOps, Cloud and also Integration of DevOps technology with other technologies  Git/Github, Docker etc.
 
-![pj01](https://user-images.githubusercontent.com/120474799/216073576-96a6633d-9651-4510-bfa4-0ccf9958320d.png)
+PROJECT-01 - 
