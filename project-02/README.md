@@ -1,5 +1,4 @@
-# Repo for my projects
+# PROJECT - 02.
 
-I will add all my projects that I was tested/deployed/writed on my learning journey to this repo.
+![pj02](https://user-images.githubusercontent.com/120474799/216384544-f2321cb1-d638-47d8-b484-3f69708291ef.png)
 
-![pj01](https://user-images.githubusercontent.com/120474799/216073576-96a6633d-9651-4510-bfa4-0ccf9958320d.png)
