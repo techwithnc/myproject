@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: dev
+  name: cm-dev
+data:
+  quote.txt: |
+    "The way I see it,if you  want the rainbow, you gotta put up with the rain."
+      -Dolly Parton
+  whatisconfigmap: |
+    A ConfigMap is an API object that lets you store configuration for other objects to use.
+    Unlike most Kubernetes objects that have a spec , a ConfigMap has data and binaryData fields.
+    These fields accept key-value pairs as their values. Both the data field and the binaryData are optional.

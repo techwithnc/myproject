@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-staging
+  labels:
+    app: bbox01
+  namespace: staging
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bbox01
+  template:
+    metadata:
+      labels:
+        app: bbox01
+    spec:
+      containers:
+      - name: ctn01
+        image: techwithnc/busybox:1.0
+        command: ["sh", "-c", "sleep 3600"]
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "300m"
+        env:
+          - name: MY_NAME
+            valueFrom:
+              configMapKeyRef:
+                name: cm-staging
+                key: name
+          - name: MY_COUNTRY
+            valueFrom:
+              configMapKeyRef:
+                key: country
+                name: cm-staging
+          - name: MY_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: password
+                name: secret-staging
+          - name: MY_TOKEN
+            valueFrom:
+              secretKeyRef:
+                key: token
+                name: secret-staging

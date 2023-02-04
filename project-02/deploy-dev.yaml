@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-dev
+  labels:
+    app: bbox-dev
+  namespace: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bbox-dev
+  template:
+    metadata:
+      labels:
+        app: bbox-dev
+    spec:
+      containers:
+      - name: ctn02
+        image: techwithnc/busybox:1.0
+        command: ["sh", "-c", "sleep 3600"]
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        volumeMounts:
+          - mountPath: /home/cm-data
+            name: cm-volume
+            readOnly: true
+          - mountPath: /home/secret-data
+            name: secret-volume
+            readOnly: true
+      volumes:
+        - name: cm-volume
+          configMap:
+            name: cm-dev
+            items:
+              - key: "quote.txt"
+                path: "today-quote.txt"
+              - key: "whatisconfigmap"
+                path: "WhatisConfigMap"
+        - name: secret-volume
+          secret:
+            secretName: secret-dev
+            items:
+              - key: "mypasswords"
+                path: "My_Passwords"
+              - key: "mytokens"
+                path: "My_Tokens"
