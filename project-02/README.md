@@ -1,4 +1,4 @@
-# PROJECT - 02.
+# PROJECT_02 ( How to use configmap and secret )
 
 ![pj02](https://user-images.githubusercontent.com/120474799/216384544-f2321cb1-d638-47d8-b484-3f69708291ef.png)
 
@@ -48,4 +48,4 @@ In dev namespace,used configmap and secret for mounting it's values into contain
 - kubectl exec -it ## POD_NAME ## -n staging -- sh -c "printenv | grep MY"
 - kubectl exec -it ## POD_NAME ## -n dev -- sh -c " ls -l /home/"
 
-##### >>> For Demonstration of this Project with burmese language <a href="YOUTUBE_LINK">Click Here</a> <<<
+##  For Demonstration of this Project with burmese language <a href="YOUTUBE_LINK">Click Here</a>
