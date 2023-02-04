@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: init
+  name: deploy03
+  labels:
+    app: myweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myweb
+  template:
+    metadata:
+      labels:
+        app: myweb
+    spec:
+      initContainers:
+        - name: initct01
+          image: techwithnc/busybox:1.0
+          command: ['sh', '-c', "until true; do echo init container is ok; sleep 4; done"]
+      containers:
+      - name: myweb
+        image: techwithnc/sampleweb:1.0
+        ports:
+          - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+      - name: myweb
+        image: techwithnc/sampleweb:2.0
+        ports:
+          - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+      - name: mybusybox
+        image: techwithnc/busybox:1.0
+        command: ['sh', '-c', "while true;do echo sysnc app logs; sleep 20; done"]
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+          requests:
+            memory: "32Mi"
+            cpu: "100m"

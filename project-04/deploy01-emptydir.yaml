@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: e-dir
+  name: deploy01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myweb
+        image: techwithnc/sampleweb:3.0
+        command: ["sh", "-c"]
+        args:
+          - while true
+              echo "$(date) INFO some app data" >> /var/log/myapp.log;
+              sleep 5;
+            done        
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          periodSeconds: 5
+          initaialDelaySeconds: 5
+          timeoutSeconds: 1
+        readinessProbe:
+          tcpSocket:
+            port: 80
+          periodSeconds: 5
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - mountPath: /var/log
+            name: vol01
+      - name: mybusybox
+        image: techwithnc/busybox:1.0
+        resources:
+          limits:
+            memory: "32Mi"
+            cpu: "100m"
+        command: ["sh", "-c"]
+        args:
+        - while true; do
+            echo sync app logs;
+            sleep 20;
+          done;
+        volumeMounts:
+          - mountPath: /var/dir01
+            name: vol01
+      volumes:
+        - name: vol01
+          emptyDir: {}
+      

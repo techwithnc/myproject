@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: s-car
+  name: deploy02
+  labels:
+    app: myapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myweb01
+        image: techwithnc/sampleweb:1.0
+        ports:
+          - containerPort: 80
+        resources:
+          limits:
+            memory: "32Mi"
+            cpu: "100m"
+      - name: mybusybox
+        image:  techwithnc/busybox:1.0
+        command: ['sh', '-c', "while true;do echo sysnc app logs; sleep 20; done"]
+        resources:
+          limits:
+            memory: "32Mi"
+            cpu: "100m"
+      - name: myweb02
+        image: techwithnc/sampleweb:3.0
+        resources:
+          limits:
+            memory: "32Mi"
+            cpu: "100m"
