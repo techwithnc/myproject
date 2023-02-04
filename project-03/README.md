@@ -1,6 +1,6 @@
-## <p align="center"> PROJECT_03 ( How to use PersistentVolume and PersistentVolumeClaim ) </p>
+## <p align="center"> PROJECT_03 ( How to create PersistentVolume and PersistentVolumeClaim ) </p>
 
-![pj03]
+![pj03](https://user-images.githubusercontent.com/120474799/216760493-89660718-551e-43eb-a3f0-da2f4353a7e3.png)
 
 ## What is this?
 This is a sample project that I was practiced on persistent volume (pv) and persistent volume claim (pvc)
