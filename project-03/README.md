@@ -42,14 +42,14 @@ In this sample project, there are three namespaces (default ,staging and dev) an
 
 #### You can confirm wih the following commands.
 - kubectl get ns
-- kubectl get cm -n staging
-- kubectl get cm -n dev
-- kubectl get secret -n staging
-- kubectl get secret -n dev
+- kubectl get pv
+- kubectl get pvc -n staging
+- kubectl get pvc -n dev
 - kubectl get deploy -n staging
 - kubectl get deploy -n dev
-- kubectl exec -it ## POD_NAME ## -n staging -- sh -c "printenv | grep MY"
-- kubectl exec -it ## POD_NAME ## -n dev -- sh -c " ls -l /home/"
+- kubectl exec -it ## POD_NAME ## -n staging -- sh -c "ls -l /home"
+- kubectl exec -it ## POD_NAME ## -n dev -- sh -c " ls -l /home"
+- kubectl exec -it ## POD_NAME ## -n dev -- sh -c " ls -l /tmp"
 
 ##  For Demonstration of this Project with burmese language on Youtube. <a href="YOUTUBE_LINK">Click Here</a>
 
