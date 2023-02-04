@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: dev
+  name: deploy03
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: techwithnc/busybox:1.0
+        command: ["sh", "-c", "sleep 36000"]
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        volumeMounts:
+          - name: vol01
+            mountPath: /home/dir01
+          - name: vol01
+            mountPath: /tmp/dir02
+      volumes:
+        - name: vol01
+          persistentVolumeClaim:
+            claimName: pvc04
