@@ -1,9 +1,9 @@
-# PROJECT_02 ( How to use configmap and secret )
+## PROJECT_02 ( How to use configmap and secret )
 
 ![pj02](https://user-images.githubusercontent.com/120474799/216384544-f2321cb1-d638-47d8-b484-3f69708291ef.png)
 
 ## What is this?
-This is a sample project that I was practiced about configmap and secret features.
+This is a sample project that I was practiced on configmap and secret features.
 
 ## What type of kubernetes resources used in this project?
 In this sample project , I've used six types of kubernetes resources. These are  ...
@@ -24,15 +24,12 @@ In dev namespace,used configmap and secret for mounting it's values into contain
 (1) Create two namespaces for staging and dev.
 - kubectl apply -f namespace-staging.yaml
 - kubectl apply -f namespace-dev.yaml
-
 (2) Create configmap for each namespace.
 - kubectl apply -f configmap-staging.yaml
 - kubectl apply -f configmap-dev.yaml
-
 (3) Create secret for each namespace.
 - kubectl apply -f secret-staging.yaml
 - kubectl apply -f secret-dev.yaml
-
 (4) Create deployment for each namespace.
 - kubectl apply -f deploy-staging.yaml
 - kubectl apply -f deploy-dev.yaml
@@ -49,3 +46,5 @@ In dev namespace,used configmap and secret for mounting it's values into contain
 - kubectl exec -it ## POD_NAME ## -n dev -- sh -c " ls -l /home/"
 
 ##  For Demonstration of this Project with burmese language <a href="YOUTUBE_LINK">Click Here</a>
+
+<center> Thanks you </center>
