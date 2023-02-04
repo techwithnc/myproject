@@ -1,6 +1,6 @@
 ## <p align="center"> PROJECT_01 ( How to use deploy in kubernetes ) </p>
 
-![pj01](https://user-images.githubusercontent.com/120474799/216753776-72e7992d-b031-4ee4-a0b2-c6bb3d52af92.png)
+![pj01](https://user-images.githubusercontent.com/120474799/216753926-6f8e3e6a-38c4-4183-8f83-dbd997506c6a.png)
 
 ## What is this?
 This is a sample project that deploy sample website in kubernetes cluster.
