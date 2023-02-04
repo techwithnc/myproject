@@ -26,18 +26,19 @@ In this sample project, there are three namespaces (default ,staging and dev) an
 - kubectl apply -f pv02.yaml
 - kubectl apply -f pv03.yaml
 - kubectl apply -f pv04.yaml
-- kubectl apply -f pv05.yaml
 
 (3) Create five persistent volume claims (pvc)
 - kubectl apply -f pvc01.yaml
 - kubectl apply -f pvc02.yaml
 - kubectl apply -f pvc03.yaml
 - kubectl apply -f pvc04.yaml
-- kubectl apply -f pvc05.yaml
 
-(4) Create deployment for each namespace.
-- kubectl apply -f deploy-staging.yaml
-- kubectl apply -f deploy-dev.yaml
+(4) Create deployment for staging namespace.
+- kubectl apply -f deploy01-staging.yaml
+- kubectl apply -f deploy02-staging.yaml
+
+(5) Create deployment for dev namespace.
+- kubectl apply -f deploy01-dev.yaml
 
 #### You can confirm wih the following commands.
 - kubectl get ns
