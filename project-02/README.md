@@ -21,16 +21,19 @@ In staging namespace, used configmap and secret for passing it's values into con
 In dev namespace,used configmap and secret for mounting it's values into containes as volumes.
 
 ## How to deploy this project.
--(1) Create two namespaces for staging and dev.
+(1) Create two namespaces for staging and dev.
     - kubectl apply -f namespace-staging.yaml
     - kubectl apply -f namespace-dev.yaml
--(2) Create configmap for each namespace.
+
+(2) Create configmap for each namespace.
     - kubectl apply -f configmap-staging.yaml
     - kubectl apply -f configmap-dev.yaml
--(3) Create secret for each namespace.
+
+(3) Create secret for each namespace.
     - kubectl apply -f secret-staging.yaml
     - kubectl apply -f secret-dev.yaml
--(4) Create deployment for each namespace.
+
+(4) Create deployment for each namespace.
     - kubectl apply -f deploy-staging.yaml
     - kubectl apply -f deploy-dev.yaml
 
