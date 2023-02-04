@@ -1,6 +1,6 @@
-## <p align="center"> PROJECT_04 ( How to use EmptyDir,liveness probe,readiness probe, sidecar container and init container ) </p>
+## <p align="center"> PROJECT_04 ( How to use EmptyDir,Liveness Probe,Readiness Probe, Sidecar container and init container ) </p>
 
-image04
+![pj04](https://user-images.githubusercontent.com/120474799/216779197-cc7bfed9-0c3f-4ee7-b6de-5eb72e479167.png)
 
 ## What is this?
 This is a sample project that I was practiced on persistent volume (pv) and persistent volume claim (pvc)
