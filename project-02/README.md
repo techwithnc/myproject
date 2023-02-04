@@ -1,6 +1,6 @@
 ## <p align="center"> PROJECT_02 ( How to use configmap and secret ) </p>
 
-![pj02](https://user-images.githubusercontent.com/120474799/216384544-f2321cb1-d638-47d8-b484-3f69708291ef.png)
+![pj02](https://user-images.githubusercontent.com/120474799/216753965-31ae4f57-9a9c-4153-84f1-763a99aba38a.png)
 
 ## What is this?
 This is a sample project that I was practiced on configmap and secret features.
