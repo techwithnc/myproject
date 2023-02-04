@@ -47,4 +47,4 @@ In dev namespace,used configmap and secret for mounting it's values into contain
 
 ##  For Demonstration of this Project with burmese language <a href="YOUTUBE_LINK">Click Here</a>
 
-<center> Thanks you </center>
+<p align="center">  ##Thanks you </p>
