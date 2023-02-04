@@ -48,6 +48,6 @@ In dev namespace,used configmap and secret for mounting it's values into contain
 - kubectl exec -it ## POD_NAME ## -n staging -- sh -c "printenv | grep MY"
 - kubectl exec -it ## POD_NAME ## -n dev -- sh -c " ls -l /home/"
 
-##  For Demonstration of this Project with burmese language <a href="YOUTUBE_LINK">Click Here</a>
+##  For Demonstration of this Project with burmese language on Youtube. <a href="YOUTUBE_LINK">Click Here</a>
 
 ## <p align="center">  Thank you!!! </p>
