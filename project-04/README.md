@@ -3,18 +3,21 @@
 ![pj04](https://user-images.githubusercontent.com/120474799/216779197-cc7bfed9-0c3f-4ee7-b6de-5eb72e479167.png)
 
 ## What is this?
-This is a sample project that I was practiced on persistent volume (pv) and persistent volume claim (pvc)
+This is a sample project that I was practiced on emptyDir,sidecar container,init container,liveness probe and readiness probe features.
 
 ## What type of kubernetes resources used in this project?
-In this sample project , I've used six types of kubernetes resources. These are  ...
+In this sample project , I've used the following types of kubernetes features. These are  ...
 - Deployment (deploy)
 - Namespace (ns)
 - Pod (po)
-- Persistent Volume (pv)
-- Persistent Volume Claim (pvc)
+- EmptyDir
+- Sidecar container
+- Init container
+- Liveness and Readiness Probe
 
 ## Explain a little bit about of this project.
-In this sample project, there are three namespaces (default ,staging and dev) and five persistent volumes on default namespace.It's created hostpath Persistent Volume.Each persistent volume claim on staging and dev namespaces will bound to this persistent volume.
+There are four namespaces (default,e-dir,s-car and init) in this sample project.In e-dir namespace, there were two containers both have a same emptyDir volume.
+In the s-car namespace, there were three containers in POD 
 
 ## How to deploy this project.
 (1) Create two namespaces (ns) for staging and dev.
