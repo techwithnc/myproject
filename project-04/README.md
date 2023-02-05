@@ -1,6 +1,6 @@
 ## <p align="center"> PROJECT_04 ( How to use EmptyDir,Liveness Probe,Readiness Probe, Sidecar container and init container ) </p>
 
-![pj04](https://user-images.githubusercontent.com/120474799/216779197-cc7bfed9-0c3f-4ee7-b6de-5eb72e479167.png)
+![pj04](https://user-images.githubusercontent.com/120474799/216799296-78f56055-6802-4185-88f0-ef5445256875.png)
 
 ## What is this?
 This is a sample project that I was practiced on emptyDir,sidecar container,init container,liveness probe and readiness probe features.
