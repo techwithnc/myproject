@@ -11,43 +11,54 @@ In this sample project , I've used the following types of kubernetes features. T
 - Deployment (deploy)
 - Namespace (ns)
 - Pod (po)
-- EmptyDir
+- Persistent Volume (pv)
+- Persistent Volume Claim (pvc)
 - Sidecar Container
 - Init Container
 - Service (svc)
-
-## Explain a little bit about of this project.
-There are four namespaces (default,e-dir,s-car and init) in this sample project.In e-dir namespace, there were two containers both have a same emptyDir volume.
-In the s-car namespace, there were two pods.One of the pod contained two containers (main container and sidecar container). Other pod is used to generated logs on main container.
-Total number of three containers contained in init namespace.The first container in the diagram is init containers,the two containers can only be running if init container is successfully completed.In here I just used service for init container to confirm successfully completed or not. 
+- Configmap (cm)
+- Secret
 
 ## How to deploy this project.
-(1) Create three namespaces (ns) for e-dir,s-car and init.
-- kubectl apply -f ns-e-dir.yaml
-- kubectl apply -f ns-s-car.yaml
-- kubectl apply -f ns-init.yaml
+(1) Create two namespaces (ns) for staging and dev.
+- kubectl apply -f ns-staging.yaml
+- kubectl apply -f ns-dev.yaml
 
-(2) Create deployment for e-dir namespace.
-- kubectl apply -f deploy01-emptydir.yaml
+(2) Create configmap(cm) and secret for staging namespace.
+- kubectl apply -f configmap.yaml
+- kubectl apply -f secret.yaml
 
-(3) Create deployment for s-car namespace.
-- kubectl apply -f deploy02-sidecar.yaml
-- kubectl apply -f pod01-sidecar.yaml
+(3) Create persistent volume (pv).
+- kubectl apply -f pv01.yaml
+- kubectl apply -f pv02.yaml
+- kubectl apply -f pv03.yaml
 
-(4) Create deployment for init namespace.
-- kubectl apply -f deploy03-init.yaml
-- kubectl apply -f svc01-init.yaml
+(4) Create persistent volume claim (pvc)
+- kubectl apply -f pvc-staging.yaml
+- kubectl apply -f pvc01-dev.yaml
+- kubectl apply -f pvc02-dev.yaml
+
+(5) Create service(svc) for both namespaces.
+- kubectl apply -f svc-staging.yaml
+- kubectl apply -f svc-dev.yaml
+
+(6) Create deployment(deploy)
+- kubectl apply -f deploy-staging.yaml
+- kubectl apply -f deploy-dev.yaml
 
 #### You can confirm wih the following commands.
 - kubectl get ns
-- kubectl get deploy -n e-dir
-- kubectl get deploy -n s-car
-- kubectl get deploy -n init
-
-- kubectl exec -it ##_POD_NAME_## -c myweb -n e-dir -- sh -c "cat /tmp/emptydir/date.txt"
-- kubectl exec -it ##_POD_NAME_## -c mybusybox -n e-dir -- sh -c "cat /tmp/date-from-main/date.txt"
-
-- kubectl exec -it ##_POD_NAME_## -c sidecar-container -n s-car -- sh -c "cat /tmp/main-app-log/access.log"
+- kubectl get cm -n staging
+- kubectl get secret -n staging
+- kubectl get pv
+- kubectl get pvc -n staging
+- kubectl get pvc -n dev
+- kubectl get svc -n staging
+- kubectl get svc -n dev
+- kubectl get pod -n staging
+- kubectl exec -it ##_POD_NAME_## -n staging -- sh -c "printenv | grep COMPANY"
+- kubectl exec -it ##_POD_NAME_## -n staging -- sh -c "ls -l /home"
+- kubectl exec -it ##_POD_NAME_## -n dev -- sh -c "ls -l /home"
 
 ##  For Demonstration of this Project with burmese language on Youtube. <a href="YOUTUBE_LINK">Click Here</a>
 
