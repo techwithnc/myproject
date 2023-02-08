@@ -1,4 +1,4 @@
-## <p align="center"> PROJECT_01 ( How to use deploy in kubernetes ) </p>
+## <p align="center"> PROJECT_01 ( How to use Deployment, Liveness and Readiness Probes in kubernetes ) </p>
 
 ![pj01](https://user-images.githubusercontent.com/120474799/216753926-6f8e3e6a-38c4-4183-8f83-dbd997506c6a.png)
 
@@ -11,6 +11,8 @@ In this project , I've just used four type of kubernetes resources.They are ...
 - Namespace
 - ReplicaSet
 - Pod.
+- Liveness Probe
+- Readiness Probe
 
 ## Explain a little bit about of this project.
 There are two kubernetes namespaces. One is test and another is dev.In each namespace there is one deployment that create three pods.
