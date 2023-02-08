@@ -16,24 +16,26 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: myweb01
-        image: techwithnc/sampleweb:1.0
-        ports:
-          - containerPort: 80
+      - name: main-container
+        image: techwithnc/sampleweb:2.0
+        volumeMounts:
+          - name: vol01
+            mountPath: /var/log/nginx/
         resources:
           limits:
             memory: "32Mi"
             cpu: "100m"
-      - name: mybusybox
+      - name: sidecar-container
         image:  techwithnc/busybox:1.0
-        command: ['sh', '-c', "while true;do echo sysnc app logs; sleep 20; done"]
+        command: ["sh","-c","while true; do cat /tmp/main-app-log/access.log; sleep 30; done"]
+        volumeMounts:
+          - name: vol01
+            mountPath: /tmp/main-app-log
         resources:
           limits:
             memory: "32Mi"
             cpu: "100m"
-      - name: myweb02
-        image: techwithnc/sampleweb:3.0
-        resources:
-          limits:
-            memory: "32Mi"
-            cpu: "100m"
+      volumes:
+        - name: vol01
+          emptyDir: {}
+            

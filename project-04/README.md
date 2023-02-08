@@ -17,7 +17,8 @@ In this sample project , I've used the following types of kubernetes features. T
 
 ## Explain a little bit about of this project.
 There are four namespaces (default,e-dir,s-car and init) in this sample project.In e-dir namespace, there were two containers both have a same emptyDir volume.
-In the s-car namespace, there were three containers in POD 
+In the s-car namespace, there were two containers, one is main container and other one is sidecar container.
+Total number of three containers exist in init namespace.The first container in diagram is init containers,the two containers can be run only if init container is successfully completed. 
 
 ## How to deploy this project.
 (1) Create two namespaces (ns) for staging and dev.

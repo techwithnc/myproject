@@ -16,25 +16,12 @@ spec:
         app: myweb
     spec:
       initContainers:
-        - name: initct01
+        - name: init-container
           image: techwithnc/busybox:1.0
-          command: ['sh', '-c', "until true; do echo init container is ok; sleep 4; done"]
+          command: ['sh', '-c', "until nslookup svc01; do echo waiting for svc01; sleep 20; done"]
       containers:
-      - name: myweb
-        image: techwithnc/sampleweb:1.0
-        ports:
-          - containerPort: 80
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "100m"
-          requests:
-            memory: "128Mi"
-            cpu: "100m"
-      - name: myweb
+      - name: main-app
         image: techwithnc/sampleweb:2.0
-        ports:
-          - containerPort: 80
         resources:
           limits:
             memory: "128Mi"
@@ -42,13 +29,13 @@ spec:
           requests:
             memory: "128Mi"
             cpu: "100m"
-      - name: mybusybox
+      - name: sidecar-container
         image: techwithnc/busybox:1.0
-        command: ['sh', '-c', "while true;do echo sysnc app logs; sleep 20; done"]
+        command: ["sh", "-c", "sleep 3600"]
         resources:
           limits:
             memory: "128Mi"
             cpu: "100m"
           requests:
-            memory: "32Mi"
+            memory: "128Mi"
             cpu: "100m"
