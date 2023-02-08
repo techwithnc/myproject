@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc
+  namespace: staging
+spec:
+  selector:
+    app: myweb01
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

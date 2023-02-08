@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: dev
+  name: deploy
+  labels:
+    app: websvr
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: websvr
+  template:
+    metadata:
+      labels:
+        app: websvr
+    spec:
+      initContainers:
+        - name: init
+          image: techwithnc/busybox:1.0
+          command: ['sh', '-c', "until nslookup svc-dev; do echo waiting for service; sleep 20; done"]
+      containers:
+      - name: main-app
+        image: techwithnc/sampleweb:3.0
+        ports:
+          - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+        readinessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        volumeMounts:
+          - name: vol01
+            mountPath: /home/company-data
+          - name: vol02
+            mountPath: /home/app-data
+      volumes:
+        - name: vol01
+          persistentVolumeClaim:
+            claimName: pvc01
+        - name: vol02
+          persistentVolumeClaim:
+            claimName: pvc02
