@@ -1,4 +1,4 @@
-## <p align="center"> PROJECT_04 ( How to use EmptyDir,Liveness Probe,Readiness Probe, Sidecar container and init container ) </p>
+## <p align="center"> PROJECT_04 ( How to use EmptyDir, Sidecar container and init container ) </p>
 
 ![pj04](https://user-images.githubusercontent.com/120474799/217431741-f465e6f7-0c9c-4452-8980-648fd041851b.png)
 
@@ -12,8 +12,6 @@ In this sample project , I've used the following types of kubernetes features. T
 - Pod (po)
 - EmptyDir
 - Sidecar container
-- Init container
-- Liveness and Readiness Probe
 
 ## Explain a little bit about of this project.
 There are four namespaces (default,e-dir,s-car and init) in this sample project.In e-dir namespace, there were two containers both have a same emptyDir volume.
