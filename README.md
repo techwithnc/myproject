@@ -2,6 +2,9 @@
 
 In this repository I will upload my projects on DevOps, Cloud and also Integration of DevOps technology with other technologies  Git/Github, Docker etc.<br>
 
+<a href="https://github.com/techwithnc/myproject/tree/main/project-05">PROJECT_05 ( sample k8s project ) </a></b>
+This is a sample project that I was practiced on kubernete features.
+
 <a href="https://github.com/techwithnc/myproject/tree/main/project-04"> PROJECT_04 ( How to use EmptyDir, Sidecar container and init container )  </a></b>
 There are four namespaces (default,e-dir,s-car and init) in this sample project.In e-dir namespace, there were two containers both have a same emptyDir volume.
 In the s-car namespace, there were two pods.One of the pod contained two containers (main container and sidecar container). Other pod is used to generated logs on main container.
