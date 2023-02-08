@@ -1,6 +1,7 @@
-## <p align="center"> PROJECT_05 ( sample project ) </p>
+## <p align="center"> PROJECT_05 ( sample k8s project ) </p>
 
-![pj04](https://user-images.githubusercontent.com/120474799/217431741-f465e6f7-0c9c-4452-8980-648fd041851b.png)
+![pj05](https://user-images.githubusercontent.com/120474799/217478594-051046d6-e9d7-4ba8-b762-e39e0432c86f.png)
+
 
 ## What is this?
 This is a sample project that I was practiced on kubernete features.
