@@ -17,4 +17,4 @@ In this sample project, there are three namespaces (default ,staging and dev) an
 In this sample project , there were two namespaces (staging and dev). Each deployment created 5 replicas pods using techwithnc/busybox:1.0 docker images. In staging namespace, used configmap and secret for passing it's values into containers as environment variables. In dev namespace,used configmap and secret for mounting it's values into containes as volumes. <br>
 
 <a href="https://github.com/techwithnc/myproject/tree/main/project-01">PROJECT_01 ( How to use Deployment, Liveness and Readiness Probes in kubernetes )  </a></b>
-In this projet I've create two kubernetes namespaces. One is test and another is dev.In each namespace there is one deployment that create three pods. <br>
+In this project I've create two kubernetes namespaces. One is test and another is dev.In each namespace there is one deployment that create three pods. <br>
