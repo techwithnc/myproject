@@ -21,7 +21,7 @@ spec:
           command: ['sh', '-c', "until nslookup svc; do echo waiting for svc in staging namespace; sleep 20; done"]
       containers:
       - name: main-app
-        image: techwithnc/sampleweb:2.0
+        image: techwithnc/simpleweb:2.0
         env:
           - name: COMPANY_NAME
             valueFrom:

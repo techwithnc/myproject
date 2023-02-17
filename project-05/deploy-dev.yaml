@@ -21,7 +21,7 @@ spec:
           command: ['sh', '-c', "until nslookup svc-dev; do echo waiting for service in dev namespace; sleep 20; done"]
       containers:
       - name: main-app
-        image: techwithnc/sampleweb:3.0
+        image: techwithnc/simpleweb:3.0
         ports:
           - containerPort: 80
         resources:
