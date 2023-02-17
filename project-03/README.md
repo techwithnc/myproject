@@ -3,10 +3,10 @@
 ![pj03](https://user-images.githubusercontent.com/120474799/216760493-89660718-551e-43eb-a3f0-da2f4353a7e3.png)
 
 ## What is this?
-This is a sample project that I was practiced on persistent volume (pv) and persistent volume claim (pvc)
+This is a simple project that I was practiced on persistent volume (pv) and persistent volume claim (pvc)
 
 ## What type of kubernetes resources used in this project?
-In this sample project , I've used six types of kubernetes resources. These are  ...
+In this simple project , I've used six types of kubernetes resources. These are  ...
 - Deployment (deploy)
 - Namespace (ns)
 - Pod (po)
@@ -14,7 +14,7 @@ In this sample project , I've used six types of kubernetes resources. These are 
 - Persistent Volume Claim (pvc)
 
 ## Explain a little bit about of this project.
-In this sample project, there are three namespaces (default ,staging and dev) and five persistent volumes on default namespace.It's created hostpath Persistent Volume.Each persistent volume claim on staging and dev namespaces will bound to this persistent volume.
+In this simple project, there are three namespaces (default ,staging and dev) and five persistent volumes on default namespace.It's created hostpath Persistent Volume.Each persistent volume claim on staging and dev namespaces will bound to this persistent volume.
 
 ## How to deploy this project.
 (1) Create two namespaces (ns) for staging and dev.

@@ -3,10 +3,10 @@
 ![pj02](https://user-images.githubusercontent.com/120474799/216753965-31ae4f57-9a9c-4153-84f1-763a99aba38a.png)
 
 ## What is this?
-This is a sample project that I was practiced on configmap and secret features.
+This is a simple project that I was practiced on configmap and secret features.
 
 ## What type of kubernetes resources used in this project?
-In this sample project , I've used six types of kubernetes resources. These are  ...
+In this simple project , I've used six types of kubernetes resources. These are  ...
 - Deployment
 - Namespace
 - ReplicaSet
@@ -15,7 +15,7 @@ In this sample project , I've used six types of kubernetes resources. These are 
 - Secret
 
 ## Explain a little bit about of this project.
-In this sample project , there were two namespaces (staging and dev).
+In this simple project , there were two namespaces (staging and dev).
 Each deployment created 5 replicas pods using techwithnc/busybox:1.0 docker images.
 In staging namespace, used configmap and secret for passing it's values into containers as environment variables.
 In dev namespace,used configmap and secret for mounting it's values into containes as volumes.

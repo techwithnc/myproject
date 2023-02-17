@@ -1,13 +1,13 @@
-## <p align="center"> PROJECT_05 ( sample k8s project ) </p>
+## <p align="center"> PROJECT_05 ( simple k8s project ) </p>
 
 ![pj05](https://user-images.githubusercontent.com/120474799/217478594-051046d6-e9d7-4ba8-b762-e39e0432c86f.png)
 
 
 ## What is this?
-This is a sample project that I was practiced on kubernete features.
+This is a simple project that I was practiced on kubernete features.
 
 ## What type of kubernetes resources used in this project?
-In this sample project , I've used the following types of kubernetes features. These are  ...
+In this simple project , I've used the following types of kubernetes features. These are  ...
 - Deployment (deploy)
 - Namespace (ns)
 - Pod (po)

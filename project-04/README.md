@@ -3,10 +3,10 @@
 ![pj04](https://user-images.githubusercontent.com/120474799/217431741-f465e6f7-0c9c-4452-8980-648fd041851b.png)
 
 ## What is this?
-This is a sample project that I was practiced on emptyDir,sidecar container and init container features.
+This is a simple project that I was practiced on emptyDir,sidecar container and init container features.
 
 ## What type of kubernetes resources used in this project?
-In this sample project , I've used the following types of kubernetes features. These are  ...
+In this simple project , I've used the following types of kubernetes features. These are  ...
 - Deployment (deploy)
 - Namespace (ns)
 - Pod (po)
@@ -16,7 +16,7 @@ In this sample project , I've used the following types of kubernetes features. T
 - Service (svc)
 
 ## Explain a little bit about of this project.
-There are four namespaces (default,e-dir,s-car and init) in this sample project.In e-dir namespace, there were two containers both have a same emptyDir volume.
+There are four namespaces (default,e-dir,s-car and init) in this simple project.In e-dir namespace, there were two containers both have a same emptyDir volume.
 In the s-car namespace, there were two pods.One of the pod contained two containers (main container and sidecar container). Other pod is used to generated logs on main container.
 Total number of three containers contained in init namespace.The first container in the diagram is init containers,the two containers can only be running if init container is successfully completed.In here I just used service for init container to confirm successfully completed or not. 
 
