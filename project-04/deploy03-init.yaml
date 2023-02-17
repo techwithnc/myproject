@@ -21,7 +21,7 @@ spec:
           command: ['sh', '-c', "until nslookup svc01; do echo waiting for svc01; sleep 20; done"]
       containers:
       - name: main-app
-        image: techwithnc/sampleweb:2.0
+        image: techwithnc/simpleweb:2.0
         resources:
           limits:
             memory: "128Mi"

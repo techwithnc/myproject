@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: myweb
-        image: techwithnc/sampleweb:3.0
+        image: techwithnc/simpleweb:3.0
         command: ["sh", "-c"]
         args:
           - while true;
