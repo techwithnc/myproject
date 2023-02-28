@@ -2,6 +2,9 @@
 
 In this repository I will upload my projects on DevOps, Cloud and also Integration of DevOps technology with other technologies  Git/Github, Docker etc.<br>
 
+<a href="https://github.com/techwithnc/myproject/tree/main/project-06">PROJECT_06 ( Automated WebSite Deployment using GitHub,Jenkins and DockerHub )</a></b>
+This is a simple project that I was practiced on Github(webhook feature),Jenkins (Jenkinsfile,Github hook trigger, groovy language) and  Docker.In this Project I have used the Git/GitHub, Jenkins and Docker and integrated all these technologies to create an automated system for website application.When developer push codes to Github,the Jenkins server will automatically receive trigger from Github and start doing its jobs (build app , build Image and Push Image to Dockerhub).
+
 <a href="https://github.com/techwithnc/myproject/tree/main/project-05">PROJECT_05 ( simple k8s project ) </a></b>
 This is a simple project that I was practiced on kubernete features.
 
