@@ -1,6 +1,6 @@
 ## <p align="center"> PROJECT_07 ( Provisition AWS resources with Terraform ) </p>
 
-![pj06](https://user-images.githubusercontent.com/120474799/221751207-8764c311-939b-4114-b918-23ee6ac15535.png)
+![pj07](https://user-images.githubusercontent.com/120474799/224554638-1725baf8-9c8b-4153-bc0c-e09334ac4c9c.png)
 
 ## What is this?
 This is a simple project that I was practiced on AWS and Terraform.In this Project I have used terraform to provisition some AWS resources.
