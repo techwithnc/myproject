@@ -21,7 +21,7 @@ In this simple project , I've used the following types of AWS resources. These a
 - Key pair
 
 ## How to deploy this project?
-It's very simple. First, go to this <a href="https://developer.hashicorp.com/terraform/downloads">link</a> to download terraform and install it.Second , clone this repo.Then,finally, type this command <b>terraform apply -var-file="staging-env.tfvars" --auto-approve </b>in your ferraform project root directory.
+It's very simple. First, go to this <a href="https://developer.hashicorp.com/terraform/downloads">link</a> to download terraform and install it.Second , clone this repo.Then,finally, type this command <i><b>terraform apply -var-file="staging-env.tfvars" --auto-approve </b></i>in your ferraform project root directory.
 
 ##  For Demonstration of this Project with burmese language on Youtube. <a href="YOUTUBE_LINK">Click Here</a>
 
