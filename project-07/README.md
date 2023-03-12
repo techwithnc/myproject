@@ -6,14 +6,14 @@
 This is a simple project that I was practiced on AWS and Terraform.In this Project I have used terraform to provisioning some AWS resources.
 
 ## What type of AWS resources are include in this project?
-In this simple project , I've used the following types of AWS resources. These are  ...
-- Instances
+In this simple project , I've used the following types of AWS resource. These are  ...
+- Instance
 - Loadbalancer
 - VPC
-- subnets
+- Subnets
 - Security Group
 - Internet Gateway
-- Routing
+- Routing table
 - Elastic IP
 - NAT gateway
 - S3 bucket
