@@ -5,9 +5,23 @@
 ## What is this?
 This is a simple project that I was practiced on AWS and Terraform.In this Project I have used terraform to provisioning some AWS resources.
 
-## How to deploy this project?
-First you need to have Jenkins server, github and docker accounts.In jenkins server, you need to install some recommended plugins and "Pipeline Utility Steps" plugin.If you are using private github repo , you must need to setup credential in jenkins server for pulling source codes.
+## What type of AWS resources are include in this project?
+In this simple project , I've used the following types of AWS resources. These are  ...
+- Instances
+- Loadbalancer
+- VPC
+- subnets
+- Security Group
+- Internet Gateway
+- Routing
+- Elastic IP
+- NAT gateway
+- S3 bucket
+- S3 bucket versioning
+- Key pair
 
+## How to deploy this project?
+It's very simple. First, go to this <a href="https://developer.hashicorp.com/terraform/downloads">link</a> to download terraform and install it.Second , clone this repo.Then,finally, type this command <b>terraform apply -var-file="staging-env.tfvars" --auto-approve </b>in your ferraform project root directory.
 
 ##  For Demonstration of this Project with burmese language on Youtube. <a href="YOUTUBE_LINK">Click Here</a>
 
