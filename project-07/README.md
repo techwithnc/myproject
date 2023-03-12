@@ -3,7 +3,7 @@
 ![pj07](https://user-images.githubusercontent.com/120474799/224554638-1725baf8-9c8b-4153-bc0c-e09334ac4c9c.png)
 
 ## What is this?
-This is a simple project that I was practiced on AWS and Terraform.In this Project I have used terraform to provisioning some AWS resources.
+This is a simple terraform project that I was practiced on AWS.In this Project I have used terraform to provisioning some AWS resources.
 
 ## What type of AWS resources are include in this project?
 In this simple project , I've used the following types of AWS resource. These are  ...
