@@ -2,6 +2,9 @@
 
 In this repository I will upload my projects on DevOps, Cloud and also Integration of DevOps technology with other technologies  Git/Github, Docker etc.<br>
 
+<a href="https://github.com/techwithnc/myproject/tree/main/project-08">PROJECT_08 ( Monitoring and Alerting with Prometheus )</a></b>
+This is project that I was practiced on how to monitor and sent alerts with Prometheus.
+
 <a href="https://github.com/techwithnc/myproject/tree/main/project-07">PROJECT_07 ( Provisioning AWS resources with Terraform )</a></b>
 This is a simple terraform project that I was practiced on AWS.In this Project I have used terraform to provisioning some AWS resources.
 
