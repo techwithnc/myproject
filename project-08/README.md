@@ -5,7 +5,7 @@
 ![this_is_image01](images/image01.png)
 
 <p align="center">
-  <img width="460" height="300" src="images/image01.png">
+  <img width="100" height="100" src="images/image01.png">
 </p>
 
 ##  For Demonstration of this Project with burmese language on Youtube. <a href="YOUTUBE_LINK">Click Here</a>
