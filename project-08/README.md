@@ -1,8 +1,6 @@
 ## <p align="center"> PROJECT_08 ( Monitoring and Alerting with Prometheus ) </p>
 
-![pj08](https://user-images.githubusercontent.com/120474799/236420103-7948360b-72e4-40b9-91b7-f6512988b1dc.jpeg)
-
-![this_is_image01](images/image01.png)
+![pj08](images/pj08.jpeg)
 
 <p align="center">
   <img width="480" height="270" src="images/image01.png">
