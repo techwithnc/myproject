@@ -2,7 +2,7 @@
 
 ![pj08](images/pj08.jpeg)
 
-#### All instances are working well in Grafana Dashboard.
+#### All instances are working well that shown in Grafana Dashboard.
 ![working-state](images/normal-state.png)
 ![working-state](images/normal-state02.png)
 </br>
@@ -30,8 +30,5 @@
 #### Slack notifications alert from Prometheus alert manager.
 ![slack-alert](images/slack-alert.png)
 </br>
-
-
-##  For Demonstration of this Project with burmese language on Youtube. <a href="YOUTUBE_LINK">Click Here</a>
 
 ## <p align="center">  Thank you!!! </p>
