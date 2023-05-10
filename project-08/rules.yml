@@ -1,10 +1,9 @@
-
 groups:
 - name: alert.rules
   rules:
   - alert: InstanceDown
     expr: up == 0
-    for: 10s
+    for: 1m
     labels:
       severity: critical
     annotations:
@@ -13,29 +12,29 @@ groups:
   
   - alert: HostOutOfMemory
     expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100 < 35
-    for: 10s
+    for: 1m
     labels:
       severity: warning
     annotations:
-      summary: "Host out of memory !!! "
+      summary: "Host has been out of memory !!! "
       description: " Memory usages of instance({{ $labels.instance }}) is over 80%. "
 
 
   - alert: HostOutOfDiskSpace
     expr: (node_filesystem_avail_bytes{mountpoint="/"}  * 100) / node_filesystem_size_bytes{mountpoint="/"} < 35
-    for: 10s
+    for: 1m
     labels:
       severity: warning
     annotations:
-      summary: "Host out of disk space !!! "
+      summary: "Host has been out of disk space !!! "
       description: "Storage capacity of instance ({{ $labels.instance }}) is almost full (< 25% left)"
 
 
   - alert: HostHighCpuLoad
     expr: avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[1m]) * 100) < 30   
-    for: 10s
+    for: 1m
     labels:
       severity: warning
     annotations:
-      summary: "Host high CPU load !!!"
+      summary: "Host has been high CPU load !!!"
       description: "CPU load of instance({{ $labels.instance }}) is > 80%"

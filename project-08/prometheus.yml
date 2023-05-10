@@ -12,7 +12,11 @@ scrape_configs:
     scrape_interval: 10s
     static_configs:
       - targets: ['prometheus:9090']
-  - job_name: 'nodes'
+  - job_name: 'linux-nodes'
     scrape_interval: 10s
     static_configs:
       - targets: ['prometheus:9100', 'db-svr01:9100', 'app-svr01:9100', 'app-svr02:9100']
+  - job_name: 'windows-nodes'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['win-svr01:9182', 'win-svr02:9182']
