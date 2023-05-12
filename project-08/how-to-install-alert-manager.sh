@@ -2,6 +2,7 @@
 # Creating service user
 sudo useradd --no-create-home --shell /bin/false alert_manager
 
+
 # Download prometheus Alert Manager 
 wget https://github.com/prometheus/alertmanager/releases/download/v0.25.0/alertmanager-0.25.0.linux-amd64.tar.gz
 
