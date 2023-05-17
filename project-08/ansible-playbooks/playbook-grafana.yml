@@ -1,0 +1,39 @@
+## This is the ansible playbook for Grafana installation on Ubuntu.
+---
+- name: Grafana installation on Ubuntu.
+  hosts: ##YOUR_HOST_NAME
+  become: true
+  pre_tasks:
+  - name: APT update.
+    ansible.builtin.apt:
+      update_cache: yes
+      cache_valid_time: 3600
+  tasks:
+  - name: Install necessary softwares.
+    ansible.builtin.apt:
+      pkg:
+        - apt-transport-https
+        - software-properties-common
+        - wget
+      state: latest
+  - name: Download GPG key.
+    ansible.builtin.get_url:
+      url: https://apt.grafana.com/gpg.key
+      dest: /usr/share/keyrings/grafana.key
+  - name: Add repo.
+    ansible.builtin.apt_repository:
+      repo: deb [signed-by=/usr/share/keyrings/grafana.key] https://apt.grafana.com stable main
+      state: present
+      filename: grafana
+  - name: Install Grafana Enterprise.
+    ansible.builtin.apt:
+      pkg:
+        - grafana-enterprise
+      state: latest
+      update_cache: true
+  - name: Start service.
+    ansible.builtin.systemd:
+      name: grafana-server.service
+      daemon_reload: true
+      enabled: true
+      state: started

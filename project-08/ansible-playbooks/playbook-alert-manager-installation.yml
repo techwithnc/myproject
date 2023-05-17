@@ -1,0 +1,85 @@
+## This is the ansible playbook for Alert-Manager installation on Ubuntu.
+---
+- name: Alert_Manager installation on Ubuntu OS
+  hosts: ##YOUR_HOST_NAME
+  become: yes
+  vars:
+    am_dlink: "https://github.com/prometheus/alertmanager/releases/download/v0.25.0/alertmanager-0.25.0.linux-amd64.tar.gz"
+    am_checksum: "sha256:206cf787c01921574ca171220bb9b48b043c3ad6e744017030fed586eb48e04b"
+  pre_tasks:
+  - name: APT update.
+    ansible.builtin.apt:
+      update_cache: yes
+      cache_valid_time: 3600
+  tasks:
+  - name: Create user for Alert Manager.
+    ansible.builtin.user:
+      name: alert_manager
+      shell: /bin/false
+      create_home: false
+  - name: Creates directories.
+    ansible.builtin.file:
+      path: '{{item}}'
+      state: directory
+      owner: alert_manager
+      group: alert_manager
+    with_items: ["/etc/alertmanager", "/var/lib/alertmanager"]
+  - name: Download Alert-Manger Original file.
+    ansible.builtin.get_url:
+        url: '{{ am_dlink }}'
+        dest: /home/techwithnc/alertmanager-0.25.0.linux-amd64.tar.gz
+        checksum: '{{ am_checksum }}'
+  - name: Unarchive original tar file.
+    ansible.builtin.unarchive:
+      src: /home/techwithnc/alertmanager-0.25.0.linux-amd64.tar.gz
+      dest: /home/techwithnc/
+      remote_src: yes
+  - name: Copy file to /etc/alertmanager dir.
+    ansible.builtin.copy:
+      src: /home/techwithnc/alertmanager-0.25.0.linux-amd64/alertmanager.yml
+      dest: /etc/alertmanager
+      owner: alert_manager
+      group: alert_manager
+      mode: '0755'
+      remote_src: yes
+  - name: Copy file to /usr/local/bin/ dir
+    ansible.builtin.copy:
+      src: /home/techwithnc/alertmanager-0.25.0.linux-amd64/{{item}}
+      dest: /usr/local/bin/
+      owner: alert_manager
+      group: alert_manager
+      mode: '0755'
+      remote_src: yes
+    with_items: ["alertmanager", "amtool"]
+  # - name: Remove file (delete file)
+  #   ansible.builtin.file:
+  #     path: /home/techwithnc/prometheus.tar.gz
+  #     state: absent
+  # - name: Recursively remove directory
+  #   ansible.builtin.file:
+  #     path: /home/techwithnc/prometheus-2.44.0.linux-amd64
+  #     state: absent
+  - name: Create alertmanager service file.
+    ansible.builtin.shell: |
+      cat <<EOF | sudo tee /etc/systemd/system/alertmanager.service
+      [Unit]
+      Description=Alert Manager
+      Wants=network-online.target
+      After=network-online.target
+      [Service]
+      User=alert_manager
+      Group=alert_manager
+      Type=simple
+      ExecStart=/usr/local/bin/alertmanager \
+      --config.file=/etc/alertmanager/alertmanager.yml \
+      --storage.path=/var/lib/alertmanager
+      Restart=always
+      [Install]
+      WantedBy=multi-user.target
+      EOF
+  - name: Manage service.
+    ansible.builtin.systemd:
+      name: alertmanager.service
+      daemon_reload: true
+      enabled: true
+      state: started
