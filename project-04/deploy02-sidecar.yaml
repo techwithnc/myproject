@@ -1,3 +1,11 @@
+# Author: "Tech With NC"
+#
+# Date Created: 1/Feb/2023
+# Last Modified: 1/Jun/2023
+# 
+# Description.
+# Kubernetes deployment file for creating slidecar containers.
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
