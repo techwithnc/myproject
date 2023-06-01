@@ -1,4 +1,13 @@
-## How to install grafana on Ubuntu
+####################################################################
+## Author: "Tech With NC"
+#
+## Date Created: 1/Feb/2023
+## Last Modified: 1/Jun/2023
+# 
+## Description.
+## How to install grafana on ubuntu OS.
+####################################################################
+
 sudo apt update
 sudo apt-get install -y apt-transport-https
 sudo apt-get install -y software-properties-common wget
