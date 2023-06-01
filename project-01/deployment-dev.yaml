@@ -1,3 +1,11 @@
+# Auther: Tech With NC
+#
+# Date Created: 1/Feb/2023
+# Date Modified: 1/Jun/2023
+# 
+# Description.
+# kubernetes deployment file for creating 3 replicas containers.
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
